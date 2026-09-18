@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sayali Pagare | UI/UX Designer & Computer Science Student</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Google Fonts: Space Grotesk (Headings), Plus Jakarta Sans (Body), JetBrains Mono (Code/Badges) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            display: ['"Space Grotesk"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+  
+  <style>
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 7px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #0b0f19;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #1e293b;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #4f46e5;
+    }
+
+    /* Minimal Bento Card Styles */
+    .bento-card {
+      background: #111827;
+      border: 1px solid #1f293d;
+      border-radius: 1.25rem;
+      transition: all 0.25s ease-in-out;
+    }
+    .bento-card:hover {
+      border-color: #3b82f6;
+      transform: translateY(-2px);
+    }
+
+    .light .bento-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+    }
+    .light .bento-card:hover {
+      border-color: #2563eb;
+    }
+
+    /* Subtle Grid Background Pattern */
+    .bg-grid {
+      background-size: 28px 28px;
+      background-image: linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+                        linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    }
+    .light .bg-grid {
+      background-image: linear-gradient(to right, rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+                        linear-gradient(to bottom, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+    }
+  </style>
+</head>
+<body class="bg-[#0b0f19] text-slate-100 font-sans antialiased transition-colors duration-300 min-h-screen bg-grid selection:bg-blue-500/30 selection:text-blue-300">
+
+  <!-- Header / Nav -->
+  <header class="sticky top-0 z-50 bg-[#0b0f19]/90 border-b border-slate-800/80 backdrop-blur-md px-4 sm:px-6 py-4">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      
+      <!-- Logo/Name -->
+      <a href="#" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-xl bg-blue-600 text-white font-display font-black flex items-center justify-center text-base shadow-md group-hover:scale-105 transition-transform">
+          SP
+        </div>
+        <div>
+          <span class="font-display font-bold text-base text-white block leading-none">SAYALI PAGARE</span>
+          <span class="text-[11px] text-slate-400 font-mono tracking-wider uppercase">UI/UX Designer</span>
+        </div>
+      </a>
+
+      <!-- Navigation Links -->
+      <nav class="hidden lg:flex items-center gap-6 text-xs font-semibold text-slate-300">
+        <a href="#about" class="hover:text-blue-400 transition-colors">About</a>
+        <a href="#projects" class="hover:text-blue-400 transition-colors">Code Builds</a>
+        <a href="#figma-projects" class="hover:text-blue-400 transition-colors">Figma Case Studies</a>
+        <a href="#skills" class="hover:text-blue-400 transition-colors">Skills</a>
+        <a href="#journey" class="hover:text-blue-400 transition-colors">Education & NCC</a>
+        <a href="#accomplishments" class="hover:text-blue-400 transition-colors">Achievements</a>
+        <a href="#contact" class="hover:text-blue-400 transition-colors">Contact</a>
+      </nav>
+
+      <!-- Action Buttons -->
+      <div class="flex items-center gap-2 sm:gap-3">
+        <button id="theme-toggle" class="w-9 h-9 rounded-lg bg-slate-900 border border-slate-800 text-slate-300 hover:text-amber-400 flex items-center justify-center transition-colors">
+          <i id="theme-icon" class="fa-solid fa-moon text-sm"></i>
+        </button>
+        <a href="resume.pdf" download class="px-3.5 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-bold text-xs shadow-md transition-all flex items-center gap-1.5">
+          <i class="fa-solid fa-download text-blue-400"></i> <span class="hidden sm:inline">Resume</span>
+        </a>
+        <a href="#contact" class="px-4 py-2 rounded-lg bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs shadow-md transition-all">
+          Get in Touch
+        </a>
+      </div>
+
+    </div>
+  </header>
+
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-10 space-y-10">
+
+    <!-- HERO / PROFILE SUMMARY BENTO HEADER -->
+    <section id="about" class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
+      
+      <!-- Main Intro Card (8 Cols) -->
+      <div class="lg:col-span-8 bento-card p-6 sm:p-8 flex flex-col justify-between">
+        <div>
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 text-blue-400 border border-blue-500/20 text-xs font-semibold mb-4">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            Available for UI/UX & Design Internships
+          </div>
+          <h1 class="font-display font-extrabold text-2xl sm:text-4xl lg:text-5xl text-white tracking-tight leading-tight mb-4">
+            Creating Intuitive Interfaces & Nostalgic Palettes.
+          </h1>
+          <p class="text-slate-300 text-xs sm:text-sm leading-relaxed mb-6">
+            Passionate and continuous learner keen on creating intuitive UI/UX designs and nostalgic color palettes that resonate with users. Dedicated NCC Cadet bringing strong self-discipline, teamwork, and sharp time-management capabilities to creative problem-solving.
+          </p>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-3 sm:gap-4 text-xs font-medium pt-4 border-t border-slate-800/80 text-slate-400">
+          <span class="flex items-center gap-1.5"><i class="fa-solid fa-location-dot text-blue-400"></i> Thane, India</span>
+          <span class="hidden sm:inline">•</span>
+          <a href="mailto:18sayalipagare@gmail.com" class="hover:text-blue-400 transition-colors flex items-center gap-1.5">
+            <i class="fa-solid fa-envelope text-blue-400"></i> 18sayalipagare@gmail.com
+          </a>
+          <span class="hidden sm:inline">•</span>
+          <a href="tel:9594805519" class="hover:text-blue-400 transition-colors flex items-center gap-1.5">
+            <i class="fa-solid fa-phone text-blue-400"></i> +91 9594805519
+          </a>
+        </div>
+      </div>
+
+      <!-- Quick Metrics & Links Card (4 Cols) -->
+      <div class="lg:col-span-4 bento-card p-6 flex flex-col justify-between space-y-6">
+        <div class="space-y-4">
+          <div class="p-4 rounded-xl bg-slate-900/90 border border-slate-800">
+            <span class="text-xs text-slate-400 block font-mono">CURRENT EDUCATION</span>
+            <span class="font-display font-bold text-white text-base block mt-0.5">B.Sc. Computer Science</span>
+            <span class="text-xs text-blue-400 font-mono block mt-1">Ruia Autonomous College (CGPA: 7.59)</span>
+          </div>
+
+          <div class="p-4 rounded-xl bg-slate-900/90 border border-slate-800">
+            <span class="text-xs text-slate-400 block font-mono">LEADERSHIP ROLE</span>
+            <span class="font-display font-bold text-white text-base block mt-0.5">Junior Under Officer</span>
+            <span class="text-xs text-indigo-400 font-mono block mt-1">Ruia NCC Girls Unit, Mumbai</span>
+          </div>
+        </div>
+
+        <div class="space-y-2">
+          <a href="resume.pdf" download class="w-full py-2.5 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-bold text-xs flex items-center justify-center gap-2 shadow-lg transition-all">
+            <i class="fa-solid fa-file-arrow-down"></i> Download Resume (PDF)
+          </a>
+          <div class="flex gap-2">
+            <a href="https://www.linkedin.com/in/sayalipagare/" target="_blank" class="flex-1 py-2 rounded-xl bg-blue-600/20 hover:bg-blue-600 border border-blue-500/30 text-blue-300 hover:text-white font-bold text-xs flex items-center justify-center gap-1.5 transition-all">
+              <i class="fa-brands fa-linkedin text-xs"></i> LinkedIn
+            </a>
+            <a href="https://github.com/kaizo-x" target="_blank" class="flex-1 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-bold text-xs flex items-center justify-center gap-1.5 transition-all">
+              <i class="fa-brands fa-github text-xs"></i> GitHub
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- FEATURED CODE PROJECTS SECTION (4 CARDS IN 1 ROW ON DESKTOP) -->
+    <section id="projects" class="space-y-4">
+      <div class="flex items-center justify-between">
+        <div>
+          <span class="text-xs font-mono text-blue-400 uppercase tracking-widest font-bold">SOFTWARE & CODE BUILDS</span>
+          <h2 class="font-display text-2xl font-extrabold text-white">Featured Code Projects</h2>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        
+        <!-- Project 1 -->
+        <div class="bento-card p-5 flex flex-col justify-between space-y-4">
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <span class="px-2 py-0.5 rounded-md text-[10px] font-mono font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                GAME & VOICE UI
+              </span>
+            </div>
+            <h3 class="font-display text-base font-bold text-white">ZENITH RUN</h3>
+            <p class="text-slate-300 text-xs leading-relaxed mt-2">
+              2D endless pixel-art runner with dual manual and voice controls built to engage children with Parkinson's Disease.
+            </p>
+          </div>
+          <div class="flex items-center justify-between pt-3 border-t border-slate-800">
+            <span class="text-[10px] text-slate-400 font-mono">Accessibility</span>
+            <a href="https://github.com/kaizo-x" target="_blank" class="text-xs font-bold text-blue-400 hover:text-blue-300 flex items-center gap-1">
+              View Build <i class="fa-solid fa-arrow-right text-[10px]"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="bento-card p-5 flex flex-col justify-between space-y-4">
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <span class="px-2 py-0.5 rounded-md text-[10px] font-mono font-bold bg-sky-500/10 text-sky-400 border border-sky-500/20">
+                AI DASHBOARD
+              </span>
+            </div>
+            <h3 class="font-display text-base font-bold text-white">STADIUM OPS ASSISTANT</h3>
+            <p class="text-slate-300 text-xs leading-relaxed mt-2">
+              Real-time AI operations dashboard to monitor crowd density and facilitate rapid emergency dispatching in large venues.
+            </p>
+          </div>
+          <div class="flex items-center justify-between pt-3 border-t border-slate-800">
+            <span class="text-[10px] text-slate-400 font-mono">AI Dispatch</span>
+            <a href="https://github.com/kaizo-x" target="_blank" class="text-xs font-bold text-blue-400 hover:text-blue-300 flex items-center gap-1">
+              View Build <i class="fa-solid fa-arrow-right text-[10px]"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="bento-card p-5 flex flex-col justify-between space-y-4">
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <span class="px-2 py-0.5 rounded-md text-[10px] font-mono font-bold bg-purple-500/10 text-purple-400 border border-purple-500/20">
+                .NET UTILITY
+              </span>
+            </div>
+            <h3 class="font-display text-base font-bold text-white">COLOR PICKER TOOL</h3>
+            <p class="text-slate-300 text-xs leading-relaxed mt-2">
+              Responsive .NET Core color sampler tool to inspect and extract color values directly from screen imagery.
+            </p>
+          </div>
+          <div class="flex items-center justify-between pt-3 border-t border-slate-800">
+            <span class="text-[10px] text-slate-400 font-mono">Color Sampling</span>
+            <a href="https://github.com/kaizo-x" target="_blank" class="text-xs font-bold text-blue-400 hover:text-blue-300 flex items-center gap-1">
+              View Build <i class="fa-solid fa-arrow-right text-[10px]"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="bento-card p-5 flex flex-col justify-between space-y-4">
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <span class="px-2 py-0.5 rounded-md text-[10px] font-mono font-bold bg-amber-500/10 text-amber-400 border border-amber-500/20">
+                POS WORKFLOW
+              </span>
+            </div>
+            <h3 class="font-display text-base font-bold text-white">RESTAURANT BILLING POS</h3>
+            <p class="text-slate-300 text-xs leading-relaxed mt-2">
+              Desktop user interface engineered to calculate orders, manage tax configurations, and streamline billing.
+            </p>
+          </div>
+          <div class="flex items-center justify-between pt-3 border-t border-slate-800">
+            <span class="text-[10px] text-slate-400 font-mono">Order Management</span>
+            <a href="https://github.com/kaizo-x" target="_blank" class="text-xs font-bold text-blue-400 hover:text-blue-300 flex items-center gap-1">
+              View Build <i class="fa-solid fa-arrow-right text-[10px]"></i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- FIGMA & UI/UX CASE STUDIES SECTION (4 CARDS IN 1 ROW ON DESKTOP) -->
+    <section id="figma-projects" class="space-y-4">
+      <div class="flex items-center justify-between">
+        <div>
+          <span class="text-xs font-mono text-purple-400 uppercase tracking-widest font-bold">UI/UX & DESIGN SYSTEM</span>
+          <h2 class="font-display text-2xl font-extrabold text-white flex items-center gap-2">
+            <i class="fa-brands fa-figma text-pink-500"></i> Figma Projects & Case Studies
+          </h2>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        
+        <!-- Figma Project 1 -->
+        <div class="bento-card p-5 flex flex-col justify-between space-y-4 border-pink-500/20 hover:border-pink-500/60">
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <span class="px-2 py-0.5 rounded-md text-[10px] font-mono font-bold bg-pink-500/10 text-pink-400 border border-pink-500/20">
+                E-COMMERCE
+              </span>
+            </div>
+            <h3 class="font-display text-base font-bold text-white">ZARA WEBSITE REDESIGN</h3>
+            <p class="text-slate-300 text-xs leading-relaxed mt-2">
+              Minimalist UI/UX overhaul focusing on product filtering, desktop checkout flows, and clean typography.
+            </p>
+          </div>
+          <div class="flex items-center justify-between pt-3 border-t border-slate-800">
+            <span class="text-[10px] text-slate-400 font-mono">Wireframing</span>
+            <a href="#" target="_blank" class="text-xs font-bold text-pink-400 hover:text-pink-300 flex items-center gap-1">
+              Figma <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Figma Project 2 -->
+        <div class="bento-card p-5 flex flex-col justify-between space-y-4 border-pink-500/20 hover:border-pink-500/60">
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <span class="px-2 py-0.5 rounded-md text-[10px] font-mono font-bold bg-violet-500/10 text-violet-400 border border-violet-500/20">
+                PRODUCTIVITY
+              </span>
+            </div>
+            <h3 class="font-display text-base font-bold text-white">KAIZOSPACE PLANNER UI</h3>
+            <p class="text-slate-300 text-xs leading-relaxed mt-2">
+              Digital planner templates and nostalgic pastel palettes designed for Etsy and Gumroad storefronts.
+            </p>
+          </div>
+          <div class="flex items-center justify-between pt-3 border-t border-slate-800">
+            <span class="text-[10px] text-slate-400 font-mono">Design System</span>
+            <a href="#" target="_blank" class="text-xs font-bold text-pink-400 hover:text-pink-300 flex items-center gap-1">
+              Figma <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Figma Project 3 -->
+        <div class="bento-card p-5 flex flex-col justify-between space-y-4 border-pink-500/20 hover:border-pink-500/60">
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <span class="px-2 py-0.5 rounded-md text-[10px] font-mono font-bold bg-fuchsia-500/10 text-fuchsia-400 border border-fuchsia-500/20">
+                MOBILE APP
+              </span>
+            </div>
+            <h3 class="font-display text-base font-bold text-white">MOBILE UI CASE STUDY</h3>
+            <p class="text-slate-300 text-xs leading-relaxed mt-2">
+              High-fidelity mobile wireframes featuring component states, auto-layout, and high-contrast accessibility.
+            </p>
+          </div>
+          <div class="flex items-center justify-between pt-3 border-t border-slate-800">
+            <span class="text-[10px] text-slate-400 font-mono">Mobile First</span>
+            <a href="#" target="_blank" class="text-xs font-bold text-pink-400 hover:text-pink-300 flex items-center gap-1">
+              Figma <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Figma Project 4 -->
+        <div class="bento-card p-5 flex flex-col justify-between space-y-4 border-pink-500/20 hover:border-pink-500/60">
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <span class="px-2 py-0.5 rounded-md text-[10px] font-mono font-bold bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">
+                BRANDING
+              </span>
+            </div>
+            <h3 class="font-display text-base font-bold text-white">RECRUITMENT BRANDING</h3>
+            <p class="text-slate-300 text-xs leading-relaxed mt-2">
+              Vector event designs, recruitment banners, and promotional posters with aligned typography standards.
+            </p>
+          </div>
+          <div class="flex items-center justify-between pt-3 border-t border-slate-800">
+            <span class="text-[10px] text-slate-400 font-mono">Brand Kit</span>
+            <a href="#" target="_blank" class="text-xs font-bold text-pink-400 hover:text-pink-300 flex items-center gap-1">
+              Figma <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- RESUME DOWNLOAD BANNER CARD -->
+    <section class="bento-card p-6 sm:p-8 bg-gradient-to-r from-blue-900/40 via-slate-900 to-indigo-900/40 border-blue-500/30 flex flex-col md:flex-row items-center justify-between gap-6">
+      <div class="space-y-2 text-center md:text-left">
+        <span class="text-xs font-mono text-blue-400 uppercase tracking-wider font-bold">READY TO REVIEW MY FULL RESUME?</span>
+        <h3 class="font-display text-xl sm:text-2xl font-extrabold text-white">Download Sayali Pagare's Resume</h3>
+        <p class="text-xs text-slate-300 max-w-xl">
+          Get a complete overview of my education at Ramnarain Ruia Autonomous College, leadership as JUO in the Ruia NCC Girls Unit, projects, and design competencies.
+        </p>
+      </div>
+
+      <div class="flex flex-wrap items-center justify-center gap-3 shrink-0">
+        <a href="resume.pdf" download class="px-6 py-3 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs flex items-center gap-2 shadow-lg transition-all">
+          <i class="fa-solid fa-download"></i> Download PDF Resume
+        </a>
+        <a href="resume.pdf" target="_blank" class="px-5 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-300 border border-slate-700 font-bold text-xs flex items-center gap-2 transition-all">
+          <i class="fa-solid fa-arrow-up-right-from-square"></i> Preview PDF
+        </a>
+      </div>
+    </section>
+
+    <!-- SKILLS SECTION -->
+    <section id="skills" class="space-y-4">
+      <div>
+        <span class="text-xs font-mono text-blue-400 uppercase tracking-widest font-bold">PROFICIENCIES</span>
+        <h2 class="font-display text-2xl font-extrabold text-white">Skills & Competencies</h2>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        
+        <!-- Skill 1 -->
+        <div class="bento-card p-5 space-y-3">
+          <div class="flex justify-between items-center">
+            <span class="text-xs font-bold text-white">DESIGN STACK</span>
+            <span class="font-mono text-xs font-bold text-blue-400">79%</span>
+          </div>
+          <p class="text-xs text-slate-400">Canva, Figma, Notion</p>
+          <div class="w-full bg-slate-800 h-1.5 rounded-full overflow-hidden">
+            <div class="bg-blue-500 h-full rounded-full" style="width: 79%;"></div>
+          </div>
+        </div>
+
+        <!-- Skill 2 -->
+        <div class="bento-card p-5 space-y-3">
+          <div class="flex justify-between items-center">
+            <span class="text-xs font-bold text-white">CODING STACK</span>
+            <span class="font-mono text-xs font-bold text-blue-400">68%</span>
+          </div>
+          <p class="text-xs text-slate-400">HTML5, CSS3, Python, GitHub</p>
+          <div class="w-full bg-slate-800 h-1.5 rounded-full overflow-hidden">
+            <div class="bg-sky-500 h-full rounded-full" style="width: 68%;"></div>
+          </div>
+        </div>
+
+        <!-- Skill 3 -->
+        <div class="bento-card p-5 space-y-3">
+          <div class="flex justify-between items-center">
+            <span class="text-xs font-bold text-white">AI & PROMPTING</span>
+            <span class="font-mono text-xs font-bold text-blue-400">83%</span>
+          </div>
+          <p class="text-xs text-slate-400">AI Prompting, LLM Tools, Automation</p>
+          <div class="w-full bg-slate-800 h-1.5 rounded-full overflow-hidden">
+            <div class="bg-purple-500 h-full rounded-full" style="width: 83%;"></div>
+          </div>
+        </div>
+
+        <!-- Skill 4 -->
+        <div class="bento-card p-5 space-y-3">
+          <div class="flex justify-between items-center">
+            <span class="text-xs font-bold text-white">NON-TECHNICAL</span>
+            <span class="font-mono text-xs font-bold text-blue-400">85%</span>
+          </div>
+          <p class="text-xs text-slate-400">Project & Time Management</p>
+          <div class="w-full bg-slate-800 h-1.5 rounded-full overflow-hidden">
+            <div class="bg-emerald-500 h-full rounded-full" style="width: 85%;"></div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- EDUCATION & LEADERSHIP / VOLUNTEERING SECTION -->
+    <section id="journey" class="grid grid-cols-1 md:grid-cols-12 gap-6">
+      
+      <!-- Education (6 Cols) -->
+      <div class="md:col-span-6 bento-card p-6 space-y-4">
+        <div class="flex items-center gap-2 pb-3 border-b border-slate-800">
+          <i class="fa-solid fa-graduation-cap text-blue-400 text-base"></i>
+          <h3 class="font-display font-bold text-base text-white">Education</h3>
+        </div>
+
+        <div class="space-y-4 text-xs">
+          <div>
+            <div class="flex justify-between items-start">
+              <h4 class="font-bold text-white">Ramnarain Ruia Autonomous College</h4>
+              <span class="font-mono text-slate-500 text-[11px]">Jun 2024 - Apr 2027</span>
+            </div>
+            <p class="text-blue-400 font-medium">B.Sc. Computer Science (Third Year) | CGPA: 7.59</p>
+            <p class="text-slate-400 mt-1">Matunga, Mumbai. Focus on core CS, UI engineering, and web systems.</p>
+          </div>
+
+          <div class="pt-3 border-t border-slate-800/60">
+            <div class="flex justify-between items-start">
+              <h4 class="font-bold text-white">St. John The Baptist Junior College</h4>
+              <span class="font-mono text-slate-500 text-[11px]">Jun 2022 - Mar 2024</span>
+            </div>
+            <p class="text-slate-300">Higher Secondary Certificate (HSC) - 66.83%</p>
+            <p class="text-slate-400 mt-0.5">Thane, Maharashtra.</p>
+          </div>
+
+          <div class="pt-3 border-t border-slate-800/60">
+            <div class="flex justify-between items-start">
+              <h4 class="font-bold text-white">Little Flower High School</h4>
+              <span class="font-mono text-slate-500 text-[11px]">Jun 2009 - Mar 2022</span>
+            </div>
+            <p class="text-slate-300">Secondary School Certificate (SSC) - 80.20%</p>
+            <p class="text-slate-400 mt-0.5">Thane, Maharashtra.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Leadership & Volunteering (6 Cols) -->
+      <div class="md:col-span-6 bento-card p-6 space-y-4">
+        <div class="flex items-center gap-2 pb-3 border-b border-slate-800">
+          <i class="fa-solid fa-shield-halved text-indigo-400 text-base"></i>
+          <h3 class="font-display font-bold text-base text-white">Leadership & Volunteering</h3>
+        </div>
+
+        <div class="space-y-4 text-xs">
+          <div>
+            <div class="flex justify-between items-start">
+              <h4 class="font-bold text-white">Junior Under Officer (JUO)</h4>
+              <span class="font-mono text-indigo-400 text-[11px]">Jul 2024 - Mar 2027</span>
+            </div>
+            <p class="text-slate-300">National Cadet Corps (NCC)</p>
+            <p class="text-slate-400 mt-1">Serving as an active cadet leader at Ruia NCC Girls Unit, Mumbai, overseeing drill sessions, discipline, and unit coordination.</p>
+          </div>
+
+          <div class="pt-3 border-t border-slate-800/60">
+            <div class="flex justify-between items-start">
+              <h4 class="font-bold text-white">Student Volunteer</h4>
+              <span class="font-mono text-slate-500 text-[11px]">Dec 2025 - Jan 2026</span>
+            </div>
+            <p class="text-slate-300">NMMC-93 School, Navi Mumbai</p>
+            <p class="text-slate-400 mt-0.5">Completed 30 hours as part of the Community Engagement Program (CEP).</p>
+          </div>
+
+          <div class="pt-3 border-t border-slate-800/60">
+            <div class="flex justify-between items-start">
+              <h4 class="font-bold text-white">Event Volunteer</h4>
+              <span class="font-mono text-slate-500 text-[11px]">Nov 2024</span>
+            </div>
+            <p class="text-slate-300">Ruia College (TechStorm IT Fest)</p>
+            <p class="text-slate-400 mt-0.5">Coordinated with seniors at Intercollegiate IT Fest TechStorm.</p>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ACCOMPLISHMENTS, TRAINING, PERSONAL EXTRA (3 COLS GRID) -->
+    <section id="accomplishments" class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      
+      <!-- Accomplishments -->
+      <div class="bento-card p-6 space-y-3">
+        <div class="flex items-center gap-2 pb-2 border-b border-slate-800 text-amber-400">
+          <i class="fa-solid fa-trophy"></i>
+          <h3 class="font-display font-bold text-sm text-white">Accomplishments</h3>
+        </div>
+        <ul class="space-y-2 text-xs text-slate-300 leading-relaxed">
+          <li class="flex items-start gap-2">
+            <span class="text-amber-400 font-bold">•</span>
+            <span><strong>1st Prize:</strong> Intercollegiate IT Fest 'TechStorm' in AI TOOLS.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-amber-400 font-bold">•</span>
+            <span><strong>2nd Prize:</strong> Slogan painting competition on Drug Abuse Awareness.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-amber-400 font-bold">•</span>
+            <span><strong>Best Cadet:</strong> Awarded Second Year Best Cadet of Ruia NCC Girls Unit.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-amber-400 font-bold">•</span>
+            <span><strong>Best Firer:</strong> Ranked in Top #8 firing proficiency [NCC].</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Professional Training -->
+      <div class="bento-card p-6 space-y-3">
+        <div class="flex items-center gap-2 pb-2 border-b border-slate-800 text-blue-400">
+          <i class="fa-solid fa-certificate"></i>
+          <h3 class="font-display font-bold text-sm text-white">Training & Certifications</h3>
+        </div>
+        <ul class="space-y-2.5 text-xs text-slate-300">
+          <li class="p-2.5 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-between">
+            <span>Python Basic Course</span>
+            <span class="font-mono text-[10px] text-slate-400">HackerRank</span>
+          </li>
+          <li class="p-2.5 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-between">
+            <span>CSS Basic Course</span>
+            <span class="font-mono text-[10px] text-slate-400">HackerRank</span>
+          </li>
+          <li class="p-2.5 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-between">
+            <span>Python Test Certification</span>
+            <span class="font-mono text-[10px] text-slate-400">freeCodeCamp</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Personal Extra -->
+      <div class="bento-card p-6 space-y-3">
+        <div class="flex items-center gap-2 pb-2 border-b border-slate-800 text-purple-400">
+          <i class="fa-solid fa-user-check"></i>
+          <h3 class="font-display font-bold text-sm text-white">Languages & Hobbies</h3>
+        </div>
+        <div class="space-y-3 text-xs">
+          <div>
+            <span class="text-slate-400 block font-mono text-[10px] uppercase">LANGUAGES</span>
+            <p class="text-white font-medium mt-0.5">English, Hindi, Marathi</p>
+          </div>
+          <div>
+            <span class="text-slate-400 block font-mono text-[10px] uppercase">HOBBIES & INTERESTS</span>
+            <div class="flex flex-wrap gap-1.5 mt-1.5">
+              <span class="px-2 py-1 rounded-md bg-slate-900 border border-slate-800 text-slate-300 text-[11px]">Running</span>
+              <span class="px-2 py-1 rounded-md bg-slate-900 border border-slate-800 text-slate-300 text-[11px]">Adventure Activities</span>
+              <span class="px-2 py-1 rounded-md bg-slate-900 border border-slate-800 text-slate-300 text-[11px]">Reading</span>
+              <span class="px-2 py-1 rounded-md bg-slate-900 border border-slate-800 text-slate-300 text-[11px]">Journal Writing</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="bento-card p-8 text-center space-y-4">
+      <span class="text-xs font-mono text-blue-400 uppercase tracking-widest font-bold">CONNECT</span>
+      <h2 class="font-display text-2xl font-extrabold text-white">Let's Build Something Together</h2>
+      <p class="text-xs text-slate-400 max-w-md mx-auto">
+        Feel free to reach out directly for UI/UX internships, collaboration on creative projects, or frontend development opportunities.
+      </p>
+
+      <div class="flex flex-wrap items-center justify-center gap-4 pt-2">
+        <a href="mailto:18sayalipagare@gmail.com" class="px-5 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs flex items-center gap-2 transition-all">
+          <i class="fa-solid fa-envelope"></i> Email Me
+        </a>
+        <a href="https://www.linkedin.com/in/sayalipagare/" target="_blank" class="px-5 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-200 border border-slate-800 font-bold text-xs flex items-center gap-2 transition-all">
+          <i class="fa-brands fa-linkedin"></i> LinkedIn Profile
+        </a>
+        <a href="resume.pdf" download class="px-5 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-bold text-xs flex items-center gap-2 transition-all">
+          <i class="fa-solid fa-file-arrow-down text-blue-400"></i> Download Resume
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="text-center py-6 border-t border-slate-800/80 text-xs text-slate-500">
+    <p>© 2026 Sayali Pagare. Minimalist Bento Portfolio.</p>
+  </footer>
+
+  <script>
+    // Dark/Light Theme Toggle Switch
+    const html = document.documentElement;
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const themeIcon = document.getElementById('theme-icon');
+
+    themeToggleBtn.addEventListener('click', () => {
+      if (html.classList.contains('dark')) {
+        html.classList.remove('dark');
+        html.classList.add('light');
+        document.body.classList.remove('bg-[#0b0f19]', 'text-slate-100');
+        document.body.classList.add('bg-slate-50', 'text-slate-800');
+        themeIcon.className = 'fa-solid fa-sun text-amber-500';
+      } else {
+        html.classList.remove('light');
+        html.classList.add('dark');
+        document.body.classList.remove('bg-slate-50', 'text-slate-800');
+        document.body.classList.add('bg-[#0b0f19]', 'text-slate-100');
+        themeIcon.className = 'fa-solid fa-moon text-slate-300';
+      }
+    });
+  </script>
+
+</body>
+</html>
